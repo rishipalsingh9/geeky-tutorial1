@@ -37,7 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crud',
+    'cities_light',
+    'phonenumber_field',
 ]
+
+CITIES_LIGHT_APP_NAME = 'crud'
+
+# Disable built-in cities_light migrations
+MIGRATION_MODULES = {
+    'cities_light': None
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,10 @@
+{% extends 'crud/base.html' %}
+
+{% block title %}Success Page{% endblock title %}
+
+{% block content %}
+
+{% for fm in form %}
+    <h2>{{fm.name}} added to database</h2>
+{% endfor %}
+{% endblock content %}
