@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crud',
     'cities_light',
     'phonenumber_field',
+    'loginapp',
 ]
 
 CITIES_LIGHT_APP_NAME = 'crud'
