@@ -3,9 +3,28 @@
 {% block title %}Sign Up Today{% endblock title %}
 
 {% block content %}
-    <form action="" method="post" class="form-horizontal">
-        {% csrf_token %}
-            {{form.as_p}}
-        <input type="submit" value="Sign Up">
-    </form>
+    <div class="row">
+        <div class="col-sm-8 form-control">
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {{form.as_p|capfirst}}
+                <div class="d-grid">
+                    <input type="submit" value="Sign Up" class="alert-dark btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Below is the way to get errors info presented to the user after submitting of data
+        <form action="" method="post" novalidate class="row gx-3 gy-2 align-items-center">
+            {% csrf_token %}
+            <div class="col-md-4">
+                {% for fm in form %}
+                    <label class="form-label">{{fm.label_tag}}</label>
+                    
+                    {{fm}} {{fm.errors|striptags}}
+                {% endfor %}
+            </div>
+            <input type="submit" value="Sign Up">
+        </form>-->
 {% endblock content %}

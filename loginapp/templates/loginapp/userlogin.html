@@ -1,0 +1,24 @@
+{% extends 'loginapp/base.html' %}
+
+{% block title %}Log IN{% endblock title %}
+
+{% block content %}
+
+<form class="row g-3 needs-validation" action="" method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+            <p class="text-danger">{{error}}</p>
+        {% endfor %}
+    {% endif %}
+            {% for fm in form %}
+                {{fm.label_tag}}
+                <br>
+                {{fm}}
+                {{fm.errors|striptags}} <br><br>
+            {% endfor %}
+        <input type="submit" value="Login">
+</form>
+<a href="{% url 'register-4-signup' %}">Signup</a>
+
+{% endblock content %}

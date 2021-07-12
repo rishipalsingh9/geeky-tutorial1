@@ -1,0 +1,23 @@
+{% extends 'loginapp/base.html' %}
+
+{% block title %}Register{% endblock title %}
+
+{% block content %}
+
+<form class="row g-3 needs-validation" action="" method="post" novalidate>
+    {% csrf_token %}
+    <div class="col-md-4">
+        <table>
+            {% for fm in form %}
+                {{fm.label_tag}}
+                <br>
+                {{fm}} <br> <br>
+                {{fm.errors|striptags}}
+            {% endfor %}
+        </table>
+        <input type="submit" value="Register">
+    </div>
+</form>
+<a href="{% url 'login' %}">Log In</a>
+
+{% endblock content %}

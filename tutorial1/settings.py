@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crud',
-    'cities_light',
     'phonenumber_field',
     'loginapp',
 ]
